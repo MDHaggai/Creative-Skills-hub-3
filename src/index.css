@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #ff7b00;
+  --primary-color-dark: #cb6200;
+  --primary-color-light: #ff9b3e;
+
+  --secondary-color: #0084ff;
+  --secondary-color-dark: #006acb;
+  --secondary-color-light: #3ea2ff;
+
+  --error-color: #ef5350;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Auth Pages */
+/* Background */
+.auth-bg {
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(
+    315deg,
+    rgb(0, 44, 147) 3%,
+    rgb(109, 55, 0) 38%,
+    rgb(0, 26, 83) 68%,
+    rgb(69, 31, 0) 98%
+  );
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background:rgba(47, 47, 47, 0.5);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+    transform: translateX(1);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(1);
+  }
+}
+
+/* auth elements */
+.auth-container {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 30px;
+  z-index: 2;
+}
+
+.auth-form input,
+.auth-form .MuiSelect-select {
+  outline: solid white 1px;
+  border-radius: inherit;
+  color: white;
+}
+
+.auth-form .MuiSvgIcon-root {
+  color: white;
+}
+
+.auth-form label {
+  color: white;
+}
+
+.auth-form .MuiFormHelperText-root {
+  color: var(--error-color);
+}
+
+#registeration-options-links .active {
+  background-color: #ffffff50;
+}
+
+/* email verification */
+.verification-container .vi__character {
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white !important;
+  border-radius: 3px;
+  padding: 5px;
+  height: fit-content;
+}
+
+.verification-container .vi__character--selected {
+  outline: 2px solid var(--primary-color);
+}
